@@ -177,3 +177,20 @@
   renderCommandList();
   updateCounts();
 })();
+
+// Load probability controls after preset management is initialized.
+(() => {
+  if (!document.querySelector('link[data-prescript-probability]')) {
+    const style = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = "probability.css";
+    style.dataset.prescriptProbability = "true";
+    document.head.appendChild(style);
+  }
+  if (!document.querySelector('script[data-prescript-probability]')) {
+    const script = document.createElement("script");
+    script.src = "probability.js";
+    script.dataset.prescriptProbability = "true";
+    document.body.appendChild(script);
+  }
+})();
