@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#111111" />
   <title>PRESCRIPT Prototype</title>
   <link rel="stylesheet" href="style_iphone_fixed.css" />
-  <link rel="stylesheet" href="iphone-v12-2.css" />
 
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000000">
@@ -146,34 +145,23 @@
       </div>
 
       <div class="input-row">
-        <input
-          id="commandInput"
-          type="text"
-          placeholder="例：卒論を30分進めよ。"
-          autocomplete="off"
-        />
-        <button id="addCommandButton" type="button" class="primary-button compact">
-          追加
-        </button>
+        <input id="commandInput" type="text" placeholder="例：卒論を30分進めよ。" autocomplete="off" />
+        <button id="addCommandButton" type="button" class="primary-button compact">追加</button>
       </div>
 
       <div id="commandList" class="command-list"></div>
 
-      <button id="resetCommandsButton" type="button" class="secondary-button full">
-        初期指令に戻す
-      </button>
+      <button id="resetCommandsButton" type="button" class="secondary-button full">初期指令に戻す</button>
     </form>
   </dialog>
 
   <script src="script.js"></script>
-
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./service-worker.js").catch(() => {});
-    });
-  }
-</script>
-
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+      });
+    }
+  </script>
 </body>
 </html>
