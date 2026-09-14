@@ -1,0 +1,69 @@
+/* Per-command probability controls */
+.probability-command-item {
+  align-items: stretch;
+}
+
+.probability-command-main {
+  min-width: 0;
+  flex: 1;
+  display: grid;
+  gap: 10px;
+}
+
+.probability-command-text {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.probability-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.probability-value {
+  min-width: 58px;
+  color: var(--accent);
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 8px rgba(47,214,255,0.35);
+}
+
+.weight-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.weight-control input {
+  width: 74px;
+  min-height: 34px;
+  padding: 4px 8px;
+  text-align: center;
+  font-family: "Consolas", "Courier New", monospace;
+}
+
+@media (max-width: 560px) {
+  .probability-command-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .probability-controls {
+    gap: 8px;
+  }
+
+  .probability-value {
+    min-width: 52px;
+  }
+
+  .weight-control input {
+    width: 68px;
+  }
+}
