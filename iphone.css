@@ -1,0 +1,197 @@
+/* PRESCRIPT — dedicated iPhone layout */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #050505 !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.app-shell {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding:
+    max(14px, env(safe-area-inset-top))
+    max(12px, env(safe-area-inset-right))
+    max(28px, env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left)) !important;
+}
+
+.topbar {
+  gap: 10px;
+}
+
+.topbar h1 {
+  font-size: clamp(1.8rem, 9vw, 2.5rem) !important;
+}
+
+.topbar-actions {
+  flex-shrink: 0;
+}
+
+.terminal-panel,
+.history-panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 12px !important;
+}
+
+.terminal-panel {
+  overflow: visible !important;
+}
+
+#idleView {
+  padding: 48px 4px 24px !important;
+}
+
+.device-button {
+  width: min(92%, 360px) !important;
+}
+
+.stats {
+  gap: 34px !important;
+}
+
+#decodingView {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 48px 0 52px !important;
+  overflow: visible !important;
+}
+
+.css-terminal-stage,
+.decoding-stage {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.css-terminal,
+.decoding-terminal {
+  position: relative !important;
+  width: min(82vw, 320px) !important;
+  max-width: min(82vw, 320px) !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  transform: none !important;
+  transform-origin: center center !important;
+}
+
+.terminal-body,
+.decoding-terminal .terminal-body {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 220px !important;
+}
+
+.terminal-wing {
+  max-width: 18% !important;
+}
+
+.wing-left {
+  left: -3% !important;
+}
+
+.wing-right {
+  right: -3% !important;
+}
+
+.terminal-screen-frame {
+  left: 6% !important;
+  right: 6% !important;
+}
+
+.terminal-screen,
+.decoding-screen {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding-left: 7px !important;
+  padding-right: 7px !important;
+}
+
+.screen-head {
+  gap: 6px !important;
+}
+
+.screen-head,
+.screen-foot {
+  font-size: 0.64rem !important;
+}
+
+.screen-command-wrap,
+.screen-command,
+.code-matrix,
+.seamless-result {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.code-matrix {
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.code-matrix div {
+  white-space: nowrap !important;
+}
+
+.progress-track {
+  width: min(88%, 330px) !important;
+  margin-top: 24px !important;
+}
+
+.candidate-text {
+  padding: 0 10px;
+}
+
+.result-actions {
+  width: 100%;
+  padding: 0 4px;
+}
+
+.result-actions > * {
+  width: 100% !important;
+}
+
+.history-panel {
+  margin-top: 16px !important;
+}
+
+.input-row {
+  flex-direction: column;
+  align-items: stretch !important;
+}
+
+.input-row > * {
+  width: 100%;
+}
+
+@media (max-width: 390px) {
+  .css-terminal,
+  .decoding-terminal {
+    width: min(80vw, 304px) !important;
+    max-width: min(80vw, 304px) !important;
+  }
+
+  .terminal-body,
+  .decoding-terminal .terminal-body {
+    min-height: 212px !important;
+  }
+}
