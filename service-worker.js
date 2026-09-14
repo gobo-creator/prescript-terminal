@@ -1,8 +1,9 @@
-const CACHE_NAME = "prescript-terminal-v12-2";
+const CACHE_NAME = "prescript-terminal-v12-2b";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./style.css",
+  "./style_iphone_fixed.css",
+  "./iphone-v12-2.css",
   "./script.js",
   "./manifest.json",
   "./icon-192.png",
