@@ -1,4 +1,4 @@
-const CACHE_NAME = "prescript-terminal-v12-3";
+const CACHE_NAME = "prescript-terminal-v12-4";
 const APP_SHELL = [
   "./",
   "./index.html",
