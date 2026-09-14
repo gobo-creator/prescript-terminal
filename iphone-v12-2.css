@@ -1,4 +1,4 @@
-/* PRESCRIPT v12.2 — iPhone fit overrides */
+/* PRESCRIPT v12.3 — iPhone fit overrides */
 html {
   width: 100%;
   max-width: 100%;
@@ -25,17 +25,12 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-  padding-left: 6px !important;
-  padding-right: 6px !important;
 }
 
 .css-terminal,
-.decoding-terminal {
-  min-width: 0 !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
+.decoding-terminal,
+.terminal-body,
+.terminal-screen-frame,
 .terminal-screen,
 .decoding-screen,
 .screen-command-wrap,
@@ -43,7 +38,6 @@ body {
 .code-matrix,
 .seamless-result {
   min-width: 0 !important;
-  max-width: 100% !important;
 }
 
 .code-matrix {
@@ -60,19 +54,30 @@ body {
     min-width: 0 !important;
   }
 
+  /* The original panel clips the decorative terminal wings on iPhone. */
+  .terminal-panel {
+    overflow: visible !important;
+  }
+
+  #decodingView {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   .css-terminal-stage,
   .decoding-stage {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: max(8px, env(safe-area-inset-left)) !important;
-    padding-right: max(8px, env(safe-area-inset-right)) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     overflow: visible !important;
   }
 
+  /* Keep generous room for the angled outer armor and wings. */
   .css-terminal,
   .decoding-terminal {
-    width: min(88vw, 360px) !important;
-    max-width: min(88vw, 360px) !important;
+    width: min(78vw, 330px) !important;
+    max-width: min(78vw, 330px) !important;
     min-width: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -81,38 +86,48 @@ body {
 
   .terminal-body,
   .decoding-terminal .terminal-body {
-    min-height: 238px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 228px !important;
   }
 
   .terminal-screen-frame {
-    left: 7% !important;
-    right: 7% !important;
+    left: 6% !important;
+    right: 6% !important;
   }
 
   .terminal-screen,
   .decoding-screen {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    max-width: 100% !important;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+  }
+
+  .screen-command-wrap,
+  .screen-command,
+  .code-matrix,
+  .seamless-result {
+    max-width: 100% !important;
   }
 
   .wing-left {
-    left: -2% !important;
+    left: -1% !important;
   }
 
   .wing-right {
-    right: -2% !important;
+    right: -1% !important;
   }
 }
 
 @media (max-width: 390px) {
   .css-terminal,
   .decoding-terminal {
-    width: 84vw !important;
-    max-width: 84vw !important;
+    width: 76vw !important;
+    max-width: 76vw !important;
   }
 
   .terminal-body,
   .decoding-terminal .terminal-body {
-    min-height: 228px !important;
+    min-height: 218px !important;
   }
 }
