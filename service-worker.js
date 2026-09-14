@@ -1,4 +1,4 @@
-const CACHE_NAME = "prescript-terminal-v15-presets";
+const CACHE_NAME = "prescript-terminal-v15-1-pc-scroll";
 const APP_SHELL = ["./","./index.html","./iphone.html","./style_iphone_fixed.css","./iphone.css","./presets.css","./script.js","./presets.js","./manifest.json","./iphone-manifest.json","./icon-192.png","./icon-512.png","./apple-touch-icon.png"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)));self.skipWaiting();});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("prescript-terminal-")&&key!==CACHE_NAME).map(key=>caches.delete(key)))));self.clients.claim();});
