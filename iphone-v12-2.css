@@ -1,0 +1,118 @@
+/* PRESCRIPT v12.2 — iPhone fit overrides */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-top: max(env(safe-area-inset-top), 0px);
+  padding-right: max(env(safe-area-inset-right), 0px);
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  padding-left: max(env(safe-area-inset-left), 0px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.css-terminal-stage,
+.decoding-stage {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+
+.css-terminal,
+.decoding-terminal {
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.terminal-screen,
+.decoding-screen,
+.screen-command-wrap,
+.screen-command,
+.code-matrix,
+.seamless-result {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.code-matrix {
+  overflow: hidden !important;
+}
+
+@media (max-width: 480px) {
+  .app-shell,
+  main,
+  .main-content,
+  .content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .css-terminal-stage,
+  .decoding-stage {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: max(8px, env(safe-area-inset-left)) !important;
+    padding-right: max(8px, env(safe-area-inset-right)) !important;
+    overflow: visible !important;
+  }
+
+  .css-terminal,
+  .decoding-terminal {
+    width: min(88vw, 360px) !important;
+    max-width: min(88vw, 360px) !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform-origin: center center !important;
+  }
+
+  .terminal-body,
+  .decoding-terminal .terminal-body {
+    min-height: 238px !important;
+  }
+
+  .terminal-screen-frame {
+    left: 7% !important;
+    right: 7% !important;
+  }
+
+  .terminal-screen,
+  .decoding-screen {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .wing-left {
+    left: -2% !important;
+  }
+
+  .wing-right {
+    right: -2% !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .css-terminal,
+  .decoding-terminal {
+    width: 84vw !important;
+    max-width: 84vw !important;
+  }
+
+  .terminal-body,
+  .decoding-terminal .terminal-body {
+    min-height: 228px !important;
+  }
+}
