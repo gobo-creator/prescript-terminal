@@ -1,5 +1,22 @@
 // Command preset extension for PRESCRIPT TERMINAL
 (() => {
+  // PC page only: restore normal document scrolling. The shared stylesheet
+  // disables overscroll for the PWA/iPhone experience, so override it here.
+  if (!/\/iphone\.html$/i.test(window.location.pathname)) {
+    const pcScrollStyle = document.createElement("style");
+    pcScrollStyle.textContent = `
+      html, body {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-y: auto !important;
+        overscroll-behavior-y: auto !important;
+      }
+      body { min-height: 100vh !important; }
+      .app-shell { min-height: 100vh; }
+    `;
+    document.head.appendChild(pcScrollStyle);
+  }
+
   const STORAGE_PRESETS = "prescript_presets_v1";
   const STORAGE_ACTIVE_PRESET = "prescript_active_preset_v1";
 
@@ -40,8 +57,6 @@
     persistPresets();
   }
 
-  // Keep the original storage for backwards compatibility, while also
-  // recording edits into the currently selected preset.
   const originalSaveState = saveState;
   saveState = function () {
     originalSaveState();
@@ -156,8 +171,6 @@
     renderPresetControls();
   });
 
-  // Existing add/delete/reset actions call saveState(), which is wrapped above.
-  // Refresh the preset counter after any click that may edit the command list.
   commandDialog.addEventListener("click", () => requestAnimationFrame(renderPresetControls));
 
   renderPresetControls();
