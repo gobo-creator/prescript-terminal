@@ -1,4 +1,4 @@
-/* PRESCRIPT v12.3 — iPhone fit overrides */
+/* PRESCRIPT v12.4 — iPhone fit overrides */
 html {
   width: 100%;
   max-width: 100%;
@@ -54,7 +54,6 @@ body {
     min-width: 0 !important;
   }
 
-  /* The original panel clips the decorative terminal wings on iPhone. */
   .terminal-panel {
     overflow: visible !important;
   }
@@ -62,6 +61,7 @@ body {
   #decodingView {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    overflow: visible !important;
   }
 
   .css-terminal-stage,
@@ -73,14 +73,15 @@ body {
     overflow: visible !important;
   }
 
-  /* Keep generous room for the angled outer armor and wings. */
+  /* Screenshot-calibrated fit: leave extra space on the right edge. */
   .css-terminal,
   .decoding-terminal {
-    width: min(78vw, 330px) !important;
-    max-width: min(78vw, 330px) !important;
+    width: min(70vw, 300px) !important;
+    max-width: min(70vw, 300px) !important;
     min-width: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    transform: translateX(-3vw) !important;
     transform-origin: center center !important;
   }
 
@@ -88,19 +89,19 @@ body {
   .decoding-terminal .terminal-body {
     width: 100% !important;
     max-width: 100% !important;
-    min-height: 228px !important;
+    min-height: 212px !important;
   }
 
   .terminal-screen-frame {
-    left: 6% !important;
-    right: 6% !important;
+    left: 5.5% !important;
+    right: 5.5% !important;
   }
 
   .terminal-screen,
   .decoding-screen {
     max-width: 100% !important;
-    padding-left: 7px !important;
-    padding-right: 7px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
   }
 
   .screen-command-wrap,
@@ -111,23 +112,24 @@ body {
   }
 
   .wing-left {
-    left: -1% !important;
+    left: 0 !important;
   }
 
   .wing-right {
-    right: -1% !important;
+    right: 0 !important;
   }
 }
 
 @media (max-width: 390px) {
   .css-terminal,
   .decoding-terminal {
-    width: 76vw !important;
-    max-width: 76vw !important;
+    width: 68vw !important;
+    max-width: 68vw !important;
+    transform: translateX(-2.5vw) !important;
   }
 
   .terminal-body,
   .decoding-terminal .terminal-body {
-    min-height: 218px !important;
+    min-height: 205px !important;
   }
 }
