@@ -1989,3 +1989,65 @@ body {
     padding-right: 10px !important;
   }
 }
+
+
+/* v12.2 — stronger iPhone fit.
+   Leave room for the terminal's decorative wings instead of making
+   the terminal body itself 100vw wide. */
+@media (max-width: 480px) {
+  .css-terminal-stage,
+  .decoding-stage {
+    width: 100dvw !important;
+    max-width: 100dvw !important;
+    padding-left: max(8px, env(safe-area-inset-left)) !important;
+    padding-right: max(8px, env(safe-area-inset-right)) !important;
+    overflow: visible !important;
+  }
+
+  .css-terminal,
+  .decoding-terminal {
+    width: min(90dvw, 390px) !important;
+    max-width: min(90dvw, 390px) !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .terminal-body,
+  .decoding-terminal .terminal-body {
+    min-height: 248px !important;
+  }
+
+  .terminal-screen-frame {
+    left: 7% !important;
+    right: 7% !important;
+  }
+
+  .terminal-screen,
+  .decoding-screen {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .wing-left {
+    left: -3% !important;
+  }
+
+  .wing-right {
+    right: -3% !important;
+  }
+}
+
+/* Extra narrow iPhones */
+@media (max-width: 390px) {
+  .css-terminal,
+  .decoding-terminal {
+    width: 88dvw !important;
+    max-width: 88dvw !important;
+  }
+
+  .terminal-body,
+  .decoding-terminal .terminal-body {
+    min-height: 238px !important;
+  }
+}
