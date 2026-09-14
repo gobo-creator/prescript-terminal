@@ -1,0 +1,83 @@
+.preset-panel {
+  margin: 18px 0 8px;
+  padding: 14px;
+  border: 1px solid rgba(245,247,248,0.72);
+  background: rgba(8,8,8,0.9);
+}
+
+.preset-heading,
+.preset-switch-row,
+.preset-create-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preset-heading {
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.preset-heading strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: .06em;
+}
+
+.preset-count {
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .08em;
+}
+
+.preset-switch-row,
+.preset-create-row {
+  margin-top: 8px;
+}
+
+.preset-switch-row select,
+.preset-create-row input {
+  flex: 1;
+  min-width: 0;
+  min-height: 46px;
+}
+
+.preset-switch-row select {
+  appearance: none;
+  background: #111;
+  color: var(--text);
+  border: 1px solid rgba(245,247,248,0.78);
+  padding: 0 38px 0 12px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 19px,
+    calc(100% - 11px) 19px;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.preset-switch-row select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#deletePresetButton:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .preset-switch-row,
+  .preset-create-row {
+    align-items: stretch;
+  }
+
+  .preset-switch-row button,
+  .preset-create-row button {
+    flex: 0 0 auto;
+  }
+}
