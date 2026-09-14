@@ -1906,3 +1906,86 @@ body {
 button, input, textarea {
   -webkit-touch-callout: none;
 }
+
+
+/* v12.1 — iPhone viewport fit correction */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Never allow the terminal assembly to exceed the visible iPhone width. */
+.css-terminal-stage,
+.decoding-stage {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  overflow: visible !important;
+}
+
+.css-terminal,
+.decoding-terminal {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Keep long analysis strings inside the terminal rather than widening it. */
+.terminal-screen,
+.decoding-screen,
+.screen-command-wrap,
+.screen-command,
+.code-matrix,
+.seamless-result {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.code-matrix {
+  overflow: hidden !important;
+}
+
+/* Compact only on phone-sized screens; desktop/tablet appearance stays intact. */
+@media (max-width: 480px) {
+  .app-shell,
+  main,
+  .main-content,
+  .content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .css-terminal-stage,
+  .decoding-stage {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  .css-terminal,
+  .decoding-terminal {
+    transform-origin: center center;
+  }
+
+  .terminal-screen,
+  .decoding-screen {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
